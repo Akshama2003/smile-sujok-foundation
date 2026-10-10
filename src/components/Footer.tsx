@@ -1,31 +1,71 @@
 import { CONTACT, SOCIAL } from '../data';
-import Reveal from './Reveal';
-import { pad } from './ui';
+import { Brand } from './Navbar';
+import { Container } from './ui';
+
+const cols = [
+  {
+    title: 'Foundation',
+    items: [
+      ['About us', '#/#about'],
+      ['How Su-Jok works', '#/#how'],
+      ['Services', '#/#services'],
+      ['Team', '#/#team'],
+      ['Gallery', '#/#gallery'],
+    ],
+  },
+  {
+    title: 'Get involved',
+    items: [
+      ['Learn Sujok', '#/learn'],
+      ['Courses and fees', '#/learn#levels'],
+      ['Donate', '#/donate'],
+      ['FAQ', '#/#faq'],
+      ['Contact', '#/#contact'],
+    ],
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className={`border-t border-white/15 bg-white/10 py-8 backdrop-blur-md ${pad}`}>
-      <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-        <div className="space-y-1.5">
-          <p className="text-sm font-medium text-white">Smile Su-Jok Foundation</p>
-          <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-white/60">Smiles for all · Since 2015</p>
-          <p className="max-w-sm text-sm text-white/70">{CONTACT.address}</p>
+    <footer className="bg-forest-dark text-white">
+      <Container className="grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+        <div className="space-y-4">
+          <Brand light />
+          <p className="max-w-xs text-sm leading-relaxed text-white/70">Natural health through Su-Jok therapy. Our mission, ‘Smiles for All’, is to make holistic healing accessible to everyone, especially those in need.</p>
         </div>
-        <div className="flex flex-wrap gap-x-6 gap-y-2">
-          {SOCIAL.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noreferrer"
-              className="font-mono text-xs uppercase tracking-[0.15em] text-white/80 transition-colors duration-300 hover:text-white"
-            >
-              / {s.label}
-            </a>
-          ))}
+        {cols.map((c) => (
+          <div key={c.title}>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-soft">{c.title}</p>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {c.items.map(([l, h]) => (
+                <li key={l}>
+                  <a href={h} className="text-white/80 hover:text-white">
+                    {l}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold-soft">Visit</p>
+          <p className="mt-4 text-sm leading-relaxed text-white/80">{CONTACT.address}</p>
+          <p className="mt-3 text-sm text-white/80">{CONTACT.phones.map((p) => p.label).join(' · ')}</p>
+          <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2">
+            {SOCIAL.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="text-sm font-semibold text-white hover:text-gold-soft">
+                {s.label}
+              </a>
+            ))}
+          </div>
         </div>
-      </Reveal>
-      <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.15em] text-white/50">© 2024–2026 Smile Su-Jok Foundation. All rights reserved.</p>
+      </Container>
+      <div className="border-t border-white/10">
+        <Container className="flex flex-col gap-2 py-5 text-xs text-white/60 md:flex-row md:justify-between">
+          <p>© 2024–2026 Smile Su-Jok Foundation, Dehradun. All rights reserved.</p>
+          <p>Su-Jok is a complementary therapy. It does not replace conventional medical treatment.</p>
+        </Container>
+      </div>
     </footer>
   );
 }

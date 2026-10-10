@@ -4,8 +4,28 @@
 export const SITE = 'https://foundation-to-help-uh3f.vercel.app';
 export const img = (name: string) => `${SITE}/images/img/${encodeURIComponent(name)}`;
 
-export const VIDEO_URL =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260729_102822_0e6c87e8-c141-4744-bf32-ad30db296371.mp4';
+import logo from './assets/img/logo.png';
+import portrait from './assets/img/portrait.jpg';
+import consultation from './assets/img/consultation.jpg';
+import demonstration from './assets/img/demonstration.jpg';
+import sessionHall from './assets/img/session-hall.jpg';
+import sessionAuditorium from './assets/img/session-auditorium.jpg';
+import practitioners from './assets/img/practitioners.jpg';
+import visit from './assets/img/visit.jpg';
+import conference from './assets/img/conference.jpg';
+
+export { logo, portrait, consultation, practitioners };
+
+// Photos supplied by the foundation. Captions describe what is visible and do not name people.
+export const GALLERY = [
+  { src: consultation, title: 'Free consultation camp', alt: 'A therapist holds a participant’s hand during a consultation while other visitors wait their turn', span: 'col-span-2 row-span-2' },
+  { src: demonstration, title: 'Live demonstration', alt: 'A practitioner demonstrates hand points on a volunteer in front of an anatomy slide', span: 'row-span-2' },
+  { src: visit, title: 'Guests at the clinic', alt: 'Visitors and practitioners pose at a desk covered with Su-Jok hand charts', span: '' },
+  { src: conference, title: 'Invited talk', alt: 'A practitioner presenting a slide that compares the body’s protruding parts with the hand', span: '' },
+  { src: sessionHall, title: 'Group practice', alt: 'A hall full of participants stretching their arms forward during a guided session', span: 'col-span-2' },
+  { src: sessionAuditorium, title: 'Mass session', alt: 'Rows of participants in an auditorium practising the same hand exercise', span: '' },
+  { src: practitioners, title: 'Practitioners’ seminar', alt: 'Seven practitioners standing together in front of a seminar welcome screen', span: '' },
+];
 
 export const CONTACT = {
   email: 'smilesujokfoundation46@gmail.com',
@@ -26,21 +46,39 @@ export const EVENTS = [
   {
     title: 'Annual Day Function',
     body: 'A grand event bringing together therapists and professionals from all over India.',
-    image: img('smile3.png'),
-    alt: 'A grand event with people gathered together under colorful decorations',
+    icon: 'award',
   },
   {
     title: 'Training Camps',
     body: 'Comprehensive learning experiences for therapists to enhance their Sujok therapy skills.',
-    image: img('smile2.png'),
-    alt: 'People sitting in a room participating in a training session',
+    icon: 'cap',
   },
   {
     title: 'Blood Donation Drives',
     body: 'Community service initiatives to promote health and save lives through blood donation.',
-    image: img('ClipDown.App_375327871_17969308328555745_3414168976247017916_n.png'),
-    alt: 'People participating in a blood donation drive',
+    icon: 'drop',
   },
+];
+
+export const CONDITIONS = [
+  'Bronchitis',
+  'Asthma',
+  'Headaches',
+  'Dizziness',
+  'Migraines',
+  'Gastritis',
+  'Ulcers',
+  'Diabetes',
+  'Depression',
+  'Fever',
+  'Back pain',
+  'Knee pain',
+];
+
+export const HAND_POINTS = [
+  { n: 1, title: 'Thumb', body: 'Corresponds to the head and the neck.' },
+  { n: 2, title: 'Fleshy part under the thumb', body: 'Corresponds to the chest.' },
+  { n: 3, title: 'The palm as a whole', body: 'Refers to the abdominal region.' },
 ];
 
 export const SERVICES = [
@@ -204,17 +242,17 @@ export const DRIVES = [
   {
     title: 'Clothing drives',
     body: 'Offers dignity through appropriate clothing for various needs, and sets up homes for those transitioning out of homelessness.',
-    video: `${SITE}/images/img/smile19.mp4`,
+    icon: 'shirt',
   },
   {
     title: 'Children drives',
     body: 'Provides comfort and joy to children in difficult situations.',
-    video: `${SITE}/images/img/smile4.mp4`,
+    icon: 'baby',
   },
   {
     title: 'Food drives',
     body: 'Feeds families and individuals who struggle to access nutritious meals.',
-    video: `${SITE}/images/img/smile17.mp4`,
+    icon: 'food',
   },
 ];
 

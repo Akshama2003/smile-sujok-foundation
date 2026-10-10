@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import ScrollVideo from './components/ScrollVideo';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Learn from './pages/Learn';
 import Donate from './pages/Donate';
 
-// Hash router: "#/", "#/learn", "#/donate", with optional in-page anchor "#/#about".
+// Hash router: "#/", "#/learn", "#/donate", with optional in-page anchor "#/#about" or "#/learn#levels".
 function parse(hash: string) {
   const raw = hash.replace(/^#/, '') || '/';
   const [path, anchor] = raw.split('#');
@@ -33,15 +32,12 @@ export default function App() {
   const Page = route.path === '/learn' ? Learn : route.path === '/donate' ? Donate : Home;
 
   return (
-    <div className="relative">
-      <ScrollVideo />
-      <div className="relative z-10">
-        <Navbar />
-        <main>
-          <Page />
-        </main>
-        <Footer />
-      </div>
+    <div className="min-h-screen bg-paper">
+      <Navbar />
+      <main>
+        <Page />
+      </main>
+      <Footer />
     </div>
   );
 }

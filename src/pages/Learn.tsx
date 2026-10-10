@@ -1,156 +1,124 @@
-import Reveal from '../components/Reveal';
-import { Badge, GlassBtn, H2, Lead, Panel, PrimaryBtn, Section, Spacer } from '../components/ui';
-import { LEARN_FAQS, LEVELS, OFFLINE_BENEFITS, ONLINE_EXPECT, ONLINE_POINTS } from '../data';
+import { Check, Home as HomeIcon, Video } from 'lucide-react';
+import { Btn, Container, SectionHead } from '../components/ui';
+import { LEARN_FAQS, LEVELS, OFFLINE_BENEFITS, ONLINE_EXPECT, ONLINE_POINTS, CONTACT, portrait } from '../data';
 import { FaqList } from './Home';
+
+const section = 'scroll-mt-24 py-16 sm:py-24';
 
 export default function Learn() {
   return (
     <>
-      <Section id="learn-top">
-        <div className="flex flex-col justify-between gap-8 sm:flex-row">
-          <Badge delay={120}>Know &amp; Learn Sujok</Badge>
-          <Lead delay={220} className="max-w-sm sm:text-right">
-            Sujok therapy is a natural healing method that uses the hands and feet to treat various ailments.
-          </Lead>
-        </div>
-        <div className="max-w-xl">
-          <H2 delay={180}>
-            Learn Su-Jok,
-            <br />
-            therapy of healing.
-          </H2>
-          <Reveal delay={320} className="mt-6 max-w-md text-sm text-white/80 drop-shadow-md sm:text-base">
-            Su means hand, jok means foot. Sujok produces no side effects — it is simple, safe and easy to perform, even by patients themselves.
-          </Reveal>
-          <Reveal delay={420} className="mt-8 flex flex-wrap gap-3">
-            <PrimaryBtn href="#levels">View courses</PrimaryBtn>
-            <GlassBtn href="#/donate">Become a member</GlassBtn>
-          </Reveal>
-        </div>
-      </Section>
+      <section className="bg-sage-50">
+        <Container className="grid items-center gap-12 py-14 lg:grid-cols-[1.1fr_.9fr] lg:py-20">
+          <div className="rise">
+            <SectionHead
+              eyebrow="Know and learn Su-Jok"
+              title="Learn Su-Jok, the therapy of healing."
+              lead="Su-Jok therapy is a natural healing method that uses the hands and feet to treat various ailments. Su means hand and jok means foot. It produces no side effects and is simple enough for patients to perform themselves."
+            />
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Btn href="#/learn#levels">View courses and fees</Btn>
+              <Btn href={CONTACT.phones[0].href} variant="outline" arrow={false}>
+                Call to enrol
+              </Btn>
+            </div>
+          </div>
+          <img src={portrait} alt="A practitioner speaking at an event, with the Smile Sujok logo" className="mx-auto aspect-square w-full max-w-md rounded-[2rem] object-cover shadow-[0_30px_60px_-30px_rgba(34,54,23,.55)]" />
+        </Container>
+      </section>
 
-      <Spacer />
-
-      <Section id="what" className="justify-start">
-        <Badge>What is Sujok?</Badge>
-        <H2>
-          A hand &amp;
-          <br />
-          foot therapy.
-        </H2>
-        <div className="grid gap-4 md:grid-cols-2">
-          <Reveal>
-            <Panel className="h-full p-5 sm:p-6">
-              <h3 className="text-lg font-medium text-white">How it works</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/75">
-                Sujok therapy is a healing methodology based on acupressure — a simple method that produces highly effective results. Taking the pit of the stomach as the centre point and rotating the head 140 degrees, the parts of the hand correspond to particular parts of the body. The thumb identifies the head and the neck; the fleshy part of the palm under the thumb is the chest, and the palm as a whole refers to the abdominal region.
+      <section id="what" className={`${section} bg-paper`}>
+        <Container>
+          <SectionHead eyebrow="What is Su-Jok?" title="A hand and foot therapy." />
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            <article className="rounded-3xl border border-sage-200 bg-white p-7">
+              <h3 className="font-display text-xl font-semibold">How it works</h3>
+              <p className="mt-3 text-ink/75">
+                Su-Jok is a healing method based on acupressure, and a simple one that produces highly effective results. Taking the pit of the stomach as the centre point and rotating the head 140 degrees, the parts of the hand correspond to particular parts of the body. The thumb identifies the head and the neck, the fleshy part of the palm under the thumb is the chest, and the palm as a whole refers to the abdominal region.
               </p>
-            </Panel>
-          </Reveal>
-          <Reveal delay={110}>
-            <Panel className="h-full p-5 sm:p-6">
-              <h3 className="text-lg font-medium text-white">Benefits of Sujok therapy</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/75">
-                The palm and foot represent all the organs or meridians in the body. Hands and feet hold systems of active points corresponding to all organs, so stimulating them produces a curative effect. The method is universal — various kinds of illnesses can be treated — natural, simple, with no side effects and no special precautions needed during treatment.
+            </article>
+            <article className="rounded-3xl border border-sage-200 bg-white p-7">
+              <h3 className="font-display text-xl font-semibold">Benefits</h3>
+              <p className="mt-3 text-ink/75">
+                The palm and foot represent all the organs and meridians in the body. Hands and feet hold systems of active points that correspond to every organ, so stimulating them has a curative effect. The method is universal, natural and simple, with no side effects and no special precautions needed during treatment.
               </p>
-            </Panel>
-          </Reveal>
-        </div>
-      </Section>
+            </article>
+          </div>
+        </Container>
+      </section>
 
-      <Section id="online" className="justify-start">
-        <div className="flex flex-col justify-between gap-8 sm:flex-row">
-          <Badge>Online classes</Badge>
-          <Lead className="max-w-sm sm:text-right">Experience the healing power of Sujok therapy from the comfort of your own home.</Lead>
-        </div>
-        <H2>
-          Learn Sujok
-          <br />
-          through online classes.
-        </H2>
-        <Reveal className="max-w-xl text-sm text-white/80 drop-shadow-md sm:text-base">
-          Certified practitioners offer personalized consultations via video conferencing — covering stress relief, pain management, digestive issues and emotional balance, wherever you are.
-        </Reveal>
-        <div className="grid gap-4 md:grid-cols-2">
-          <Reveal>
-            <Panel className="h-full p-5 sm:p-6">
-              <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-white/60">What to expect</p>
-              <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-white/80">
+      <section id="online" className={`${section} bg-sage-50`}>
+        <Container>
+          <SectionHead eyebrow="Online classes" title="Learn Su-Jok from home." lead="Certified practitioners offer personalised consultations over video, covering stress relief, pain management, digestive issues and emotional balance." />
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <div className="rounded-3xl bg-white p-7 ring-1 ring-sage-200">
+              <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em] text-leaf">
+                <Video size={16} /> What to expect
+              </p>
+              <ul className="mt-4 space-y-3">
                 {ONLINE_EXPECT.map((x) => (
-                  <li key={x} className="flex gap-3">
-                    <span className="text-white/40">/</span>
+                  <li key={x} className="flex gap-3 text-ink/80">
+                    <Check size={18} className="mt-1 shrink-0 text-gold" />
                     {x}
                   </li>
                 ))}
               </ul>
-            </Panel>
-          </Reveal>
-          <Reveal delay={110}>
-            <Panel className="px-5 sm:px-6">
-              {ONLINE_POINTS.map((p, i) => (
-                <div key={p.t} className={`flex gap-5 py-4 ${i < ONLINE_POINTS.length - 1 ? 'border-b border-white/15' : ''}`}>
-                  <span className="font-mono text-[11px] tracking-[0.15em] text-white/55">0{i + 1}</span>
-                  <div>
-                    <h3 className="text-base font-medium text-white">{p.t}</h3>
-                    <p className="mt-1 text-sm text-white/70">{p.b}</p>
-                  </div>
+            </div>
+            <dl className="grid gap-4 sm:grid-cols-2">
+              {ONLINE_POINTS.map((p) => (
+                <div key={p.t} className="rounded-3xl bg-white p-6 ring-1 ring-sage-200">
+                  <dt className="font-display text-lg font-semibold text-forest">{p.t}</dt>
+                  <dd className="mt-1.5 text-sm text-ink/70">{p.b}</dd>
                 </div>
               ))}
-            </Panel>
-          </Reveal>
-        </div>
-      </Section>
+            </dl>
+          </div>
+        </Container>
+      </section>
 
-      <Section id="levels" className="justify-start">
-        <div className="flex flex-col justify-between gap-8 sm:flex-row">
-          <Badge>Offline classes</Badge>
-          <Lead className="max-w-sm sm:text-right">Hands-on learning and personal guidance from expert instructors, in three levels.</Lead>
-        </div>
-        <H2>
-          Three levels,
-          <br />
-          one path to mastery.
-        </H2>
-        <div className="grid gap-4 md:grid-cols-3">
-          {LEVELS.map((l, i) => (
-            <Reveal key={l.level} delay={i * 110}>
-              <Panel className="flex h-full flex-col gap-3 p-5 sm:p-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-white/60">{l.level}</p>
-                <h3 className="text-lg font-medium text-white">{l.title}</h3>
-                <p className="text-3xl font-normal tracking-tight text-white">{l.price}</p>
-                <p className="text-sm leading-relaxed text-white/70">{l.body}</p>
-              </Panel>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal>
-          <Panel className="max-w-2xl p-5 sm:p-6">
-            <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-white/60">Key benefits of offline classes</p>
-            <ul className="mt-3 space-y-2 text-sm text-white/80">
+      <section id="levels" className={`${section} bg-paper`}>
+        <Container>
+          <SectionHead eyebrow="Offline classes" title="Three levels, one path to mastery." lead="Hands-on learning and personal guidance from expert instructors. Pay as you progress, and receive certification after each level." />
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {LEVELS.map((l, i) => (
+              <article key={l.level} className={`flex flex-col rounded-3xl p-7 ${i === 2 ? 'bg-forest text-white' : 'border border-sage-200 bg-white'}`}>
+                <p className={`text-xs font-semibold uppercase tracking-[0.15em] ${i === 2 ? 'text-gold-soft' : 'text-leaf'}`}>{l.level}</p>
+                <h3 className="mt-2 font-display text-xl font-semibold">{l.title}</h3>
+                <p className={`mt-4 font-display text-4xl font-semibold ${i === 2 ? 'text-gold-soft' : 'text-forest'}`}>{l.price}</p>
+                <p className={`mt-4 ${i === 2 ? 'text-white/80' : 'text-ink/70'}`}>{l.body}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-6 rounded-3xl bg-sage-100 p-7">
+            <p className="flex items-center gap-2 font-display text-lg font-semibold text-forest">
+              <HomeIcon size={18} /> Key benefits of our offline classes
+            </p>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {OFFLINE_BENEFITS.map((b) => (
-                <li key={b} className="flex gap-3">
-                  <span className="text-white/40">/</span>
+                <li key={b} className="flex gap-3 text-ink/80">
+                  <Check size={18} className="mt-1 shrink-0 text-gold" />
                   {b}
                 </li>
               ))}
             </ul>
-          </Panel>
-        </Reveal>
-      </Section>
+          </div>
+        </Container>
+      </section>
 
-      <Section id="learn-faq" className="justify-start">
-        <Badge>FAQ</Badge>
-        <H2>
-          Questions about
-          <br />
-          Sujok therapy.
-        </H2>
-        <FaqList items={LEARN_FAQS} />
-        <Reveal className="flex flex-wrap gap-3">
-          <PrimaryBtn href="#/donate">Become a member</PrimaryBtn>
-          <GlassBtn href="#/#contact">Contact us</GlassBtn>
-        </Reveal>
-      </Section>
+      <section id="learn-faq" className={`${section} bg-sage-50`}>
+        <Container className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
+          <div>
+            <SectionHead eyebrow="Questions" title="About learning Su-Jok." lead="Su-Jok was developed by Professor Park Jae Woo. It is best used as a complementary therapy under the guidance of a qualified practitioner." />
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Btn href="#/donate">Become a member</Btn>
+              <Btn href="#/#contact" variant="outline" arrow={false}>
+                Contact us
+              </Btn>
+            </div>
+          </div>
+          <FaqList items={LEARN_FAQS} />
+        </Container>
+      </section>
     </>
   );
 }

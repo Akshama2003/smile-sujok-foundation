@@ -2,20 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Single light look: deep leaf green from the logo, sage neutrals, one gold accent for acupressure points. */
+:root {
+  --ink: #10241a;
+  --forest: #385624;
+  --sage-50: #f4f8f1;
+  --paper: #fcfdfa;
+  --gold: #c68a12;
+  color-scheme: light;
+}
+
 html {
-  background: #0a0a0a;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: #0a0a0a;
-  color: #fff;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Bricolage Grotesque', 'Source Sans 3', system-ui, sans-serif;
+  text-wrap: balance;
+  letter-spacing: -0.02em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.2);
+  background: #cfe0c3;
+}
+
+/* Grids default to one shrinkable column so long text never widens the page on phones. */
+@layer components {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pulse-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulse-ring 2.4s ease-out infinite;
+}
+
+.rise {
+  animation: rise 0.8s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .pulse-ring,
+  .rise {
+    animation: none;
+  }
 }
