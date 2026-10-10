@@ -127,7 +127,7 @@ function About() {
       <Container className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
         <div className="relative">
           <img src={practitioners} alt="Seven practitioners standing together in front of a seminar welcome screen" className="aspect-[4/3] w-full rounded-[2rem] object-cover" />
-          <img src={portrait} alt="A practitioner speaking at an event, with the Smile Sujok logo" className="absolute -bottom-8 right-4 hidden h-36 w-36 rounded-2xl border-4 border-paper object-cover shadow-lg sm:block" />
+          <img src={portrait} alt="Dr. Subhash Chaudhary speaking at an event, with the Smile Sujok logo" className="absolute -bottom-8 right-4 hidden h-36 w-36 rounded-2xl border-4 border-paper object-cover shadow-lg sm:block" />
         </div>
         <div>
           <SectionHead
@@ -259,7 +259,7 @@ function Courses() {
             title="Train with the foundation, online or in person."
             lead="Hands-on classes with expert instructors, in three levels. Every level ends with certification, and the Mastery Program includes the business skills to start your own practice."
           />
-          <img src={portrait} alt="A practitioner speaking at an event, with the Smile Sujok logo" className="mt-8 hidden aspect-square w-56 rounded-3xl object-cover ring-4 ring-white/15 lg:block" />
+          <img src={portrait} alt="Dr. Subhash Chaudhary speaking at an event, with the Smile Sujok logo" className="mt-8 hidden aspect-square w-56 rounded-3xl object-cover ring-4 ring-white/15 lg:block" />
           <div className="mt-8 flex flex-wrap gap-3">
             <Btn href="#/learn" variant="gold">
               Course details

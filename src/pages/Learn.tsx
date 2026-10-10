@@ -23,7 +23,7 @@ export default function Learn() {
               </Btn>
             </div>
           </div>
-          <img src={portrait} alt="A practitioner speaking at an event, with the Smile Sujok logo" className="mx-auto aspect-square w-full max-w-md rounded-[2rem] object-cover shadow-[0_30px_60px_-30px_rgba(34,54,23,.55)]" />
+          <img src={portrait} alt="Dr. Subhash Chaudhary speaking at an event, with the Smile Sujok logo" className="mx-auto aspect-square w-full max-w-md rounded-[2rem] object-cover shadow-[0_30px_60px_-30px_rgba(34,54,23,.55)]" />
         </Container>
       </section>
 

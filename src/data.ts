@@ -14,6 +14,7 @@ import practitioners from './assets/img/practitioners.jpg';
 import visit from './assets/img/visit.jpg';
 import conference from './assets/img/conference.jpg';
 import meeting from './assets/img/meeting.jpg';
+import gurmeet from './assets/img/gurmeet.jpg';
 
 export { logo, portrait, consultation, practitioners };
 
@@ -103,13 +104,13 @@ export const TEAM = [
     name: 'Dr. Subhash Chaudhary',
     role: 'President of Foundation',
     body: 'Working in this field for the last 12 years.',
-    image: img('WhatsApp Image 2024-08-24 at 17.23.23_55fdd27c.jpg'),
+    image: portrait,
   },
   {
     name: 'Dr. Gurmeet Chauhan',
     role: 'Head of Foundation · Trainer',
     body: 'A professional doctor and the trainer for our foundation, working tirelessly as Co-Head of the organization.',
-    image: img('WhatsApp Image 2024-08-24 at 17.21.48_74a45fa5.jpg'),
+    image: gurmeet,
   },
 ];
 
