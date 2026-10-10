@@ -6,6 +6,7 @@ import { Container } from './ui';
 const links = [
   { label: 'About', href: '#/#about' },
   { label: 'How it works', href: '#/#how' },
+  { label: 'Therapies', href: '#/#therapies' },
   { label: 'Services', href: '#/#services' },
   { label: 'Learn Sujok', href: '#/learn' },
   { label: 'Gallery', href: '#/#gallery' },
@@ -15,11 +16,11 @@ const links = [
 
 export function Brand({ light = false }: { light?: boolean }) {
   return (
-    <a href="#/" className="flex items-center gap-3">
-      <img src={logo} alt="Smile Sujok Foundation Dehradun logo" className="h-11 w-auto rounded-sm" />
+    <a href="#/" className="flex items-center gap-3 sm:gap-4">
+      <img src={logo} alt="Smile Sujok Foundation Dehradun logo" className="h-14 w-auto rounded-md shadow-sm sm:h-[4.5rem]" />
       <span className="leading-tight">
-        <span className={`block font-display text-base font-semibold sm:text-lg ${light ? 'text-white' : 'text-ink'}`}>Smile Su-Jok Foundation</span>
-        <span className={`hidden text-[11px] font-semibold uppercase tracking-[0.18em] sm:block ${light ? 'text-gold-soft' : 'text-leaf'}`}>Dehradun · Smiles for all</span>
+        <span className={`block font-display text-[1.05rem] font-bold sm:text-2xl ${light ? 'text-white' : 'text-ink'}`}>Smile Su-Jok Foundation</span>
+        <span className={`hidden text-[10px] font-semibold uppercase tracking-[0.2em] sm:block sm:text-xs ${light ? 'text-gold-soft' : 'text-leaf'}`}>Dehradun · Smiles for all</span>
       </span>
     </a>
   );
@@ -44,7 +45,7 @@ export default function Navbar() {
       </div>
 
       <header className="sticky top-0 z-50 border-b border-sage-200 bg-white/95 backdrop-blur">
-        <Container className="flex items-center justify-between gap-6 py-3">
+        <Container className="flex items-center justify-between gap-4 py-3">
           <Brand />
           <nav className="hidden items-center gap-6 xl:flex" aria-label="Main">
             {links.map((l) => (

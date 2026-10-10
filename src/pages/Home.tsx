@@ -28,72 +28,12 @@ import {
   Droplet,
 } from 'lucide-react';
 import HandMap from '../components/HandMap';
+import Hero, { Ribbon } from '../components/Hero';
+import { FootArt, HandArt, MagnetArt, MoxaArt } from '../components/Illustrations';
 import { Btn, Container, Eyebrow, PointMark, SafeImg, SectionHead } from '../components/ui';
 import { CONTACT, DRIVE_TAGS, EVENTS, FAQS, GALLERY, LEVELS, SERVICES, TEAM, TESTIMONIALS, consultation, portrait, practitioners } from '../data';
 
 const section = 'scroll-mt-24 py-16 sm:py-24';
-
-function Hero() {
-  return (
-    <section id="top" className="relative overflow-hidden bg-sage-50">
-      <svg className="pointer-events-none absolute -right-24 -top-24 h-[520px] w-[520px] text-sage-200" viewBox="0 0 200 200" aria-hidden>
-        {[90, 70, 50, 30].map((r) => (
-          <circle key={r} cx="100" cy="100" r={r} fill="none" stroke="currentColor" strokeWidth="1" />
-        ))}
-      </svg>
-      <Container className="relative grid items-center gap-12 py-14 lg:grid-cols-[1.02fr_.98fr] lg:gap-16 lg:py-24">
-        <div className="rise">
-          <Eyebrow>Su-Jok acupressure · Dehradun, Uttarakhand</Eyebrow>
-          <h1 className="mt-5 text-[2.6rem] font-semibold leading-[1.05] text-ink sm:text-6xl lg:text-[4.1rem]">
-            Natural healing through the <span className="text-forest">hands and feet.</span>
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/75">
-            Smile Su-Jok Foundation provides affordable healthcare and education to the community, and supports the poorer among the poor with quality medical services. Gentle acupressure, no medication, since 2015.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Btn href={CONTACT.phones[0].href}>Book a consultation</Btn>
-            <Btn href="#/learn" variant="outline">
-              Learn Su-Jok
-            </Btn>
-          </div>
-          <ul className="mt-10 grid gap-3 text-sm text-ink/75 sm:grid-cols-3">
-            {[
-              [ShieldCheck, 'No side effects'],
-              [HomeIcon, 'Home services available'],
-              [Video, 'Online consultations'],
-            ].map(([Icon, label]) => {
-              const I = Icon as typeof ShieldCheck;
-              return (
-                <li key={label as string} className="flex items-center gap-2.5">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-forest shadow-sm ring-1 ring-sage-200">
-                    <I size={17} />
-                  </span>
-                  {label as string}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
-        <div className="rise relative" style={{ animationDelay: '.15s' }}>
-          <div className="overflow-hidden rounded-[2rem] bg-sage-100 shadow-[0_30px_60px_-30px_rgba(34,54,23,.55)]">
-            <img src={consultation} alt="A therapist holds a participant’s hand during a free consultation camp" className="aspect-[4/4.3] w-full object-cover object-[35%_50%]" />
-          </div>
-          <div className="absolute -bottom-6 left-4 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg ring-1 ring-sage-200 sm:-left-6">
-            <span className="font-display text-4xl font-semibold text-forest">27</span>
-            <span className="text-sm leading-tight text-ink/70">healthcare centres
-              <br />
-              across India
-            </span>
-          </div>
-          <div className="absolute -right-2 top-6 hidden items-center gap-2 rounded-full bg-gold px-4 py-2 text-sm font-semibold text-white shadow-lg sm:flex">
-            <PointMark /> Since 2015
-          </div>
-        </div>
-      </Container>
-    </section>
-  );
-}
 
 function Stats() {
   const stats = [
@@ -126,7 +66,7 @@ function About() {
     <section id="about" className={`${section} bg-paper`}>
       <Container className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
         <div className="relative">
-          <img src={practitioners} alt="Seven practitioners standing together in front of a seminar welcome screen" className="aspect-[4/3] w-full rounded-[2rem] object-cover" />
+          <img src={practitioners} alt="Seven practitioners standing together in front of a seminar welcome screen" className="aspect-[4/4.4] w-full rounded-t-[999px] rounded-b-[2rem] object-cover object-[30%_50%]" />
           <img src={portrait} alt="Dr. Subhash Chaudhary speaking at an event, with the Smile Sujok logo" className="absolute -bottom-8 right-4 hidden h-36 w-36 rounded-2xl border-4 border-paper object-cover shadow-lg sm:block" />
         </div>
         <div>
@@ -182,6 +122,44 @@ function How() {
           ))}
         </div>
         <p className="mt-6 text-sm text-ink/60">Su-Jok is a complementary therapy. It should not replace conventional medical treatment and is best used under the guidance of a qualified practitioner.</p>
+      </Container>
+    </section>
+  );
+}
+
+function Therapies() {
+  const items = [
+    { t: 'Hand points', b: 'The palm and fingers map the whole body. The matching point is pressed with a fingertip or a small probe.', art: <HandArt mode="points" className="h-full w-auto" /> },
+    { t: 'Foot points', b: 'The sole carries the same map in a second, larger form, and is used together with the hands.', art: <FootArt className="h-full w-auto" /> },
+    { t: 'Colour therapy', b: 'Points are marked with coloured ink. The practitioner chooses each colour for its calming or stimulating effect.', art: <HandArt mode="colour" className="h-full w-auto" /> },
+    { t: 'Seed therapy', b: 'Small seeds are fixed over the points with tape, giving gentle, continuous stimulation between visits.', art: <HandArt mode="seed" className="h-full w-auto" /> },
+    { t: 'Magnet therapy', b: 'Small magnets are placed on the correspondence points as a gentle alternative to pressing by hand.', art: <MagnetArt className="h-full w-auto" /> },
+    { t: 'Moxibustion', b: 'Warmth from a burning moxa stick is held near a point to stimulate it without touching the skin.', art: <MoxaArt className="h-full w-auto" /> },
+  ];
+  return (
+    <section id="therapies" className={`${section} relative overflow-hidden bg-forest-dark text-white`}>
+      <svg className="pointer-events-none absolute -left-32 top-10 h-[620px] w-[620px] text-white/[.06]" viewBox="0 0 200 200" aria-hidden>
+        {[90, 72, 54, 36, 18].map((r) => (
+          <circle key={r} cx="100" cy="100" r={r} fill="none" stroke="currentColor" strokeWidth="1" />
+        ))}
+      </svg>
+      <Container className="relative">
+        <SectionHead
+          light
+          eyebrow="Su-Jok therapies"
+          title="Six ways to reach the same points."
+          lead="Su-Jok practitioners use the hand and foot map with simple, non-invasive techniques. Your practitioner will advise which suit you."
+        />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((it) => (
+            <article key={it.t} className="group rounded-[1.75rem] bg-white/[.07] p-4 ring-1 ring-white/15 transition-colors duration-300 hover:bg-white/[.11]">
+              <div className="flex h-60 items-center justify-center rounded-2xl bg-sage-50 p-5 transition-transform duration-500 group-hover:-translate-y-1">{it.art}</div>
+              <h3 className="mt-5 px-2 font-display text-xl font-semibold">{it.t}</h3>
+              <p className="mt-1.5 px-2 pb-2 text-white/75">{it.b}</p>
+            </article>
+          ))}
+        </div>
+        <p className="mt-8 text-sm text-white/60">Su-Jok is a complementary therapy and does not replace conventional medical treatment.</p>
       </Container>
     </section>
   );
@@ -385,7 +363,7 @@ function Team() {
         <div className="mt-12 grid gap-6 md:max-w-4xl md:grid-cols-2">
           {TEAM.map((m) => (
             <article key={m.name} className="flex gap-5 rounded-3xl border border-sage-200 bg-white p-5">
-              <SafeImg src={m.image} alt={m.name} label={m.name.replace('Dr. ', '')} className="h-40 w-32 shrink-0 rounded-2xl object-cover" />
+              <SafeImg src={m.image} alt={m.name} label={m.name.replace('Dr. ', '')} className="h-44 w-32 shrink-0 rounded-t-full rounded-b-2xl object-cover" />
               <div className="min-w-0 self-center">
                 <h3 className="font-display text-xl font-semibold">{m.name}</h3>
                 <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-leaf">{m.role}</p>
@@ -530,9 +508,11 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Ribbon />
       <Stats />
       <About />
       <How />
+      <Therapies />
       <Services />
       <Courses />
       <Events />

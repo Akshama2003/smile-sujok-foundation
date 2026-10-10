@@ -82,7 +82,66 @@ h3 {
   animation: rise 0.8s ease-out both;
 }
 
+@keyframes kenburns {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.15) translate3d(-1.6%, -1.2%, 0);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -280;
+  }
+}
+
+.kenburns {
+  animation: kenburns 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-wrap:hover .marquee {
+  animation-play-state: paused;
+}
+
+.floaty {
+  animation: floaty 7s ease-in-out infinite;
+}
+
+.dash {
+  stroke-dasharray: 4 10;
+  animation: dash-flow 16s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .kenburns,
+  .marquee,
+  .floaty,
+  .dash {
+    animation: none;
+  }
   html {
     scroll-behavior: auto;
   }
