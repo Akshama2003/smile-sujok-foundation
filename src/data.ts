@@ -13,6 +13,7 @@ import sessionAuditorium from './assets/img/session-auditorium.jpg';
 import practitioners from './assets/img/practitioners.jpg';
 import visit from './assets/img/visit.jpg';
 import conference from './assets/img/conference.jpg';
+import meeting from './assets/img/meeting.jpg';
 
 export { logo, portrait, consultation, practitioners };
 
@@ -22,9 +23,10 @@ export const GALLERY = [
   { src: demonstration, title: 'Live demonstration', alt: 'A practitioner demonstrates hand points on a volunteer in front of an anatomy slide', span: 'row-span-2' },
   { src: visit, title: 'Guests at the clinic', alt: 'Visitors and practitioners pose at a desk covered with Su-Jok hand charts', span: '' },
   { src: conference, title: 'Invited talk', alt: 'A practitioner presenting a slide that compares the body’s protruding parts with the hand', span: '' },
-  { src: sessionHall, title: 'Group practice', alt: 'A hall full of participants stretching their arms forward during a guided session', span: 'col-span-2' },
+  { src: sessionHall, title: 'Group practice', alt: 'A hall full of participants stretching their arms forward during a guided session', span: '' },
   { src: sessionAuditorium, title: 'Mass session', alt: 'Rows of participants in an auditorium practising the same hand exercise', span: '' },
   { src: practitioners, title: 'Practitioners’ seminar', alt: 'Seven practitioners standing together in front of a seminar welcome screen', span: '' },
+  { src: meeting, title: 'Meeting and gift exchange', alt: 'Five people in an office; two men hold a small potted plant between them, with a wrapped red gift box on the table', span: '' },
 ];
 
 export const CONTACT = {
