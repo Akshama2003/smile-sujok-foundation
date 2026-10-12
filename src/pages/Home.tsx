@@ -165,9 +165,71 @@ function Therapies() {
   );
 }
 
+function Trust() {
+  const facts = [
+    { icon: ShieldCheck, t: 'Registered trust', b: 'Registered under the Indian Trust Act, 1935.' },
+    { icon: Users, t: 'International link', b: 'Works in collaboration with the International Sujok Association, Moscow.' },
+    { icon: MapPin, t: '27 healthcare centres', b: 'Sujok Healthcare Centres run across India.' },
+    { icon: Leaf, t: 'Health without medicine', b: 'Natural care, with NGOs serving the rural poor.' },
+  ];
+  const doing = ['Clinics', 'Camps', 'Workshops', 'Seminars', 'Discussions', 'Training'];
+  return (
+    <section className="bg-sage-100 py-12 sm:py-16">
+      <Container>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-14">
+          <div>
+            <Eyebrow>Who we are</Eyebrow>
+            <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">One Sujok therapist in each family.</h2>
+            <p className="mt-4 text-ink/75">This is the vision of Prof. Park Jae Woo, the founder of Su-Jok, and the one we work towards through</p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {doing.map((d) => (
+                <li key={d} className="rounded-full bg-white px-4 py-1.5 text-sm font-medium text-forest ring-1 ring-sage-200">{d}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {facts.map((f) => (
+              <div key={f.t} className="rounded-2xl bg-white p-5 ring-1 ring-sage-200">
+                <f.icon className="text-gold" size={22} />
+                <h3 className="mt-3 font-display text-lg font-semibold">{f.t}</h3>
+                <p className="mt-1 text-sm text-ink/70">{f.b}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function Process() {
+  const steps = [
+    { t: 'Consultation', b: 'We listen to your health history and look at your hands and feet.' },
+    { t: 'Point mapping', b: 'The practitioner finds the points that match your complaint.' },
+    { t: 'Gentle treatment', b: 'Pressure, seeds, colour, magnets or moxa, chosen for you.' },
+    { t: 'Home care', b: 'You learn simple points to press yourself between visits.' },
+  ];
+  return (
+    <section className={`${section} bg-paper`}>
+      <Container>
+        <SectionHead eyebrow="How we work" title="Four simple steps, from first visit to self-care." />
+        <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((s, i) => (
+            <li key={s.t} className="relative rounded-2xl border border-sage-200 bg-white p-6">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-forest font-display text-lg font-semibold text-white">{i + 1}</span>
+              <h3 className="mt-4 font-display text-lg font-semibold">{s.t}</h3>
+              <p className="mt-1.5 text-sm text-ink/70">{s.b}</p>
+            </li>
+          ))}
+        </ol>
+      </Container>
+    </section>
+  );
+}
+
 function Services() {
   const icons = [Thermometer, Activity, Footprints];
-  const also = ['Bronchitis', 'Asthma', 'Headaches', 'Dizziness', 'Migraines', 'Gastritis', 'Ulcers', 'Diabetes', 'Depression'];
+  const also = ['Bronchitis', 'Asthma', 'Headaches', 'Dizziness', 'Migraines', 'Gastritis', 'Ulcers', 'Diabetes', 'Depression', 'Anxiety', 'Neck pain', 'Shoulder pain', 'Lower back pain', 'Sciatica', 'Sinus', 'Gastric acidity', 'Giddiness', 'Obesity'];
   const ways = [
     { icon: HomeIcon, t: 'Home services', b: 'Our practitioners can treat you at home.' },
     { icon: Video, t: 'Online sessions', b: 'Video consultations with certified practitioners, from anywhere.' },
@@ -510,9 +572,11 @@ export default function Home() {
       <Hero />
       <Ribbon />
       <Stats />
+      <Trust />
       <About />
       <How />
       <Therapies />
+      <Process />
       <Services />
       <Courses />
       <Events />

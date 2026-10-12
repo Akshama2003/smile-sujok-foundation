@@ -3,6 +3,13 @@ import { Btn, Container, SectionHead } from '../components/ui';
 import { LEARN_FAQS, LEVELS, OFFLINE_BENEFITS, ONLINE_EXPECT, ONLINE_POINTS, CONTACT, portrait } from '../data';
 import { FaqList } from './Home';
 
+const PROGRAMMES = ['Basic Correspondence System', 'Human Energy System (EFT)', 'Six Ki', 'Twist Therapy', 'Sam Won Dong', 'Triorigin Therapy', 'Smile Meditation', 'Smile Yoga'];
+
+const SYLLABUS = [
+  { t: 'Foundations', items: ['Meridian system and Ki energy', 'Revision of the Basic correspondence system', 'Locating meridian points on hands and feet'] },
+  { t: 'Practice', items: ['Treating with meridian points', 'Case discussion and practical sessions', 'Assessment and certification'] },
+];
+
 const section = 'scroll-mt-24 py-16 sm:py-24';
 
 export default function Learn() {
@@ -88,6 +95,31 @@ export default function Learn() {
                 <p className={`mt-4 ${i === 2 ? 'text-white/80' : 'text-ink/70'}`}>{l.body}</p>
               </article>
             ))}
+          </div>
+          <div className="mt-6 rounded-3xl border border-sage-200 bg-white p-7">
+            <p className="font-display text-lg font-semibold text-forest">Programmes we teach</p>
+            <ul className="mt-4 flex flex-wrap gap-2.5">
+              {PROGRAMMES.map((p) => (
+                <li key={p} className="rounded-full bg-sage-100 px-4 py-1.5 text-sm font-medium text-ink/80">{p}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="mt-6 rounded-3xl bg-white p-7 ring-1 ring-sage-200">
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-leaf">Level 2 syllabus</p>
+            <h3 className="mt-1 font-display text-xl font-semibold">Meridian Su-Jok Ki</h3>
+            <p className="mt-2 text-sm text-ink/70">Eligibility: completed the Level I (Basic) course from an ISA qualified lecturer, with a valid certificate.</p>
+            <div className="mt-5 space-y-3">
+              {SYLLABUS.map((g) => (
+                <details key={g.t} className="group rounded-2xl bg-sage-50 px-5 py-3 ring-1 ring-sage-200">
+                  <summary className="cursor-pointer list-none font-display font-semibold text-forest">{g.t}</summary>
+                  <ul className="mt-3 space-y-2">
+                    {g.items.map((x) => (
+                      <li key={x} className="flex gap-3 text-sm text-ink/80"><Check size={16} className="mt-0.5 shrink-0 text-gold" />{x}</li>
+                    ))}
+                  </ul>
+                </details>
+              ))}
+            </div>
           </div>
           <div className="mt-6 rounded-3xl bg-sage-100 p-7">
             <p className="flex items-center gap-2 font-display text-lg font-semibold text-forest">
