@@ -422,11 +422,11 @@ function Team() {
     <section id="team" className={`${section} bg-paper`}>
       <Container>
         <SectionHead eyebrow="Our team" title="The practitioners behind the smile." />
-        <div className="mt-12 grid gap-6 md:max-w-4xl md:grid-cols-2">
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           {TEAM.map((m) => (
-            <article key={m.name} className="flex gap-5 rounded-3xl border border-sage-200 bg-white p-5">
-              <SafeImg src={m.image} alt={m.name} label={m.name.replace('Dr. ', '')} className="h-44 w-32 shrink-0 rounded-t-full rounded-b-2xl object-cover" />
-              <div className="min-w-0 self-center">
+            <article key={m.name} className="overflow-hidden rounded-3xl border border-sage-200 bg-white">
+              <SafeImg src={m.image} alt={m.name} label={m.name.replace('Dr. ', '')} className="aspect-[4/4.2] w-full bg-sage-50 object-cover object-top" />
+              <div className="min-w-0 p-6">
                 <h3 className="font-display text-xl font-semibold">{m.name}</h3>
                 <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-leaf">{m.role}</p>
                 <p className="mt-3 text-ink/70">{m.body}</p>
