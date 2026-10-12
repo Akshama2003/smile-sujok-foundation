@@ -26,12 +26,14 @@ import {
   Video,
   X,
   Droplet,
+  Brain,
+  Wind,
 } from 'lucide-react';
 import HandMap from '../components/HandMap';
 import Hero, { Ribbon } from '../components/Hero';
 import { FootArt, HandArt, MagnetArt, MoxaArt } from '../components/Illustrations';
 import { Btn, Container, Eyebrow, PointMark, SafeImg, SectionHead } from '../components/ui';
-import { CONTACT, DRIVE_TAGS, EVENTS, FAQS, GALLERY, LEVELS, SERVICES, TEAM, TESTIMONIALS, consultation, portrait, practitioners } from '../data';
+import { CONTACT, DRIVE_TAGS, EVENTS, FAQS, GALLERY, CERTIFICATION, LEVELS, SERVICES, TEAM, TESTIMONIALS, consultation, portrait, practitioners } from '../data';
 
 const section = 'scroll-mt-24 py-16 sm:py-24';
 
@@ -204,15 +206,15 @@ function Trust() {
 
 function Process() {
   const steps = [
-    { t: 'Consultation', b: 'We listen to your health history and look at your hands and feet.' },
-    { t: 'Point mapping', b: 'The practitioner finds the points that match your complaint.' },
-    { t: 'Gentle treatment', b: 'Pressure, seeds, colour, magnets or moxa, chosen for you.' },
-    { t: 'Home care', b: 'You learn simple points to press yourself between visits.' },
+    { t: 'Book an appointment', b: 'Call or WhatsApp us, or book an online or home visit slot.' },
+    { t: 'Doctor checkup', b: 'The doctor listens to your history and examines your hands and feet.' },
+    { t: 'Su-Jok treatment', b: 'Pressure, seeds, colour, magnets or moxa on the points matched to you.' },
+    { t: 'Follow-up and home care', b: 'You learn simple points to press yourself, and we review your progress.' },
   ];
   return (
     <section className={`${section} bg-paper`}>
       <Container>
-        <SectionHead eyebrow="How we work" title="Four simple steps, from first visit to self-care." />
+        <SectionHead eyebrow="How we work" title="Appointment, checkup, treatment, follow-up." />
         <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <li key={s.t} className="relative rounded-2xl border border-sage-200 bg-white p-6">
@@ -297,7 +299,7 @@ function Courses() {
             light
             eyebrow="Learn Su-Jok"
             title="Train with the foundation, online or in person."
-            lead="Hands-on classes with expert instructors, in three levels. Every level ends with certification, and the Mastery Program includes the business skills to start your own practice."
+            lead="Hands-on classes with expert instructors, in three levels, followed by a certification course to practise as a therapist."
           />
           <img src={portrait} alt="Dr. Subhash Chaudhary speaking at an event, with the Smile Sujok logo" className="mt-8 hidden aspect-square w-56 rounded-3xl object-cover ring-4 ring-white/15 lg:block" />
           <div className="mt-8 flex flex-wrap gap-3">
@@ -310,7 +312,7 @@ function Courses() {
           </div>
         </div>
         <ol className="space-y-4">
-          {LEVELS.map((l, i) => (
+          {[...LEVELS, CERTIFICATION].map((l, i) => (
             <li key={l.level} className="flex gap-5 rounded-3xl bg-white/10 p-6 ring-1 ring-white/15 sm:p-7">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gold font-display text-xl font-semibold">{i + 1}</span>
               <div className="min-w-0 flex-1">
@@ -356,6 +358,37 @@ function Events() {
             );
           })}
         </div>
+      </Container>
+    </section>
+  );
+}
+
+function TreatmentAreas() {
+  const areas = [
+    { icon: Brain, t: 'Head', b: 'Headaches, migraine, giddiness, sinus', pt: 'Thumb' },
+    { icon: Wind, t: 'Neck and shoulder', b: 'Stiffness, shoulder and neck pain', pt: 'Thumb base' },
+    { icon: HeartPulse, t: 'Chest', b: 'Asthma, bronchitis, breathing comfort', pt: 'Thumb pad' },
+    { icon: Activity, t: 'Back', b: 'Upper and lower back pain, sciatica', pt: 'Middle finger line' },
+    { icon: Utensils, t: 'Stomach', b: 'Gastric acidity, gastritis, ulcers', pt: 'Centre of palm' },
+    { icon: Footprints, t: 'Knee and legs', b: 'Knee pain, joint stiffness', pt: 'Ring and little finger' },
+    { icon: Hand, t: 'Arms and hands', b: 'Elbow, wrist and arm pain', pt: 'Index finger' },
+    { icon: Footprints, t: 'Feet', b: 'Heel pain, tired and swollen feet', pt: 'Sole' },
+  ];
+  return (
+    <section id="treatments" className={`${section} bg-sage-50`}>
+      <Container>
+        <SectionHead eyebrow="Treatment gallery" title="From head to feet, every area has its point." lead="Each part of the body has a matching spot on the hand and foot. These are the areas people visit us for most." />
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {areas.map((a) => (
+            <li key={a.t} className="rounded-2xl border border-sage-200 bg-white p-5">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-forest text-white"><a.icon size={22} /></span>
+              <h3 className="mt-4 font-display text-lg font-semibold">{a.t}</h3>
+              <p className="mt-1 text-sm text-ink/70">{a.b}</p>
+              <p className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-leaf"><PointMark className="text-gold" /> {a.pt}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6 text-sm text-ink/60">Su-Jok is a complementary therapy and does not replace medical treatment.</p>
       </Container>
     </section>
   );
@@ -604,6 +637,7 @@ export default function Home() {
       <Services />
       <Courses />
       <Events />
+      <TreatmentAreas />
       <Gallery />
       <Team />
       <Videos />

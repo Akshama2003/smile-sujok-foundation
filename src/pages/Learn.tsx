@@ -1,6 +1,6 @@
 import { Check, Home as HomeIcon, Video } from 'lucide-react';
 import { Btn, Container, SectionHead } from '../components/ui';
-import { LEARN_FAQS, LEVELS, OFFLINE_BENEFITS, ONLINE_EXPECT, ONLINE_POINTS, CONTACT, portrait } from '../data';
+import { LEARN_FAQS, CERTIFICATION, LEVELS, OFFLINE_BENEFITS, ONLINE_EXPECT, ONLINE_POINTS, CONTACT, portrait } from '../data';
 import { FaqList } from './Home';
 
 const PROGRAMMES = ['Basic Correspondence System', 'Human Energy System (EFT)', 'Six Ki', 'Twist Therapy', 'Sam Won Dong', 'Triorigin Therapy', 'Smile Meditation', 'Smile Yoga'];
@@ -85,14 +85,14 @@ export default function Learn() {
 
       <section id="levels" className={`${section} bg-paper`}>
         <Container>
-          <SectionHead eyebrow="Offline classes" title="Three levels, one path to mastery." lead="Hands-on learning and personal guidance from expert instructors. Pay as you progress, and receive certification after each level." />
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {LEVELS.map((l, i) => (
-              <article key={l.level} className={`flex flex-col rounded-3xl p-7 ${i === 2 ? 'bg-forest text-white' : 'border border-sage-200 bg-white'}`}>
-                <p className={`text-xs font-semibold uppercase tracking-[0.15em] ${i === 2 ? 'text-gold-soft' : 'text-leaf'}`}>{l.level}</p>
+          <SectionHead eyebrow="Offline classes" title="Three levels and a certification course." lead="Hands-on learning and personal guidance from expert instructors. Pay as you progress, and receive certification after each level." />
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {[...LEVELS, CERTIFICATION].map((l, i) => (
+              <article key={l.level} className={`flex flex-col rounded-3xl p-7 ${i === 3 ? 'bg-forest text-white' : 'border border-sage-200 bg-white'}`}>
+                <p className={`text-xs font-semibold uppercase tracking-[0.15em] ${i === 3 ? 'text-gold-soft' : 'text-leaf'}`}>{l.level}</p>
                 <h3 className="mt-2 font-display text-xl font-semibold">{l.title}</h3>
-                <p className={`mt-4 font-display text-4xl font-semibold ${i === 2 ? 'text-gold-soft' : 'text-forest'}`}>{l.price}</p>
-                <p className={`mt-4 ${i === 2 ? 'text-white/80' : 'text-ink/70'}`}>{l.body}</p>
+                <p className={`mt-4 font-display text-3xl font-semibold ${i === 3 ? 'text-gold-soft' : 'text-forest'}`}>{l.price}</p>
+                <p className={`mt-4 ${i === 3 ? 'text-white/80' : 'text-ink/70'}`}>{l.body}</p>
               </article>
             ))}
           </div>

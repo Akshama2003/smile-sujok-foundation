@@ -260,3 +260,10 @@ export const DRIVES = [
 ];
 
 export const DRIVE_TAGS = ['Children drives', 'Food drives', 'Clothing drives', 'Women drives', 'Workers drives'];
+
+export const CERTIFICATION = {
+  level: 'Certification Course',
+  title: 'Su-Jok Practitioner Certification',
+  price: 'Fees on request',
+  body: 'For students who have completed the three levels. Supervised practice, an assessment, and a certificate to practise as a Su-Jok therapist. Call us for the next batch and the fee.',
+};
