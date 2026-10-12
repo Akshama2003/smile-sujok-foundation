@@ -113,13 +113,15 @@ export const TEAM = [
   {
     name: 'Dr. Subhash Chaudhary',
     role: 'President of Foundation',
-    body: 'Working in this field for the last 12 years.',
+    body: 'President of the Smile Su-Jok Foundation, Dehradun, and a practitioner and lecturer of Su-Jok therapy with 12 years in the field.',
+    tags: ['Su-Jok therapy', 'Acupressure', 'Acupuncture', 'Twist therapy', 'Holistic wellness', 'Lecturer'],
     image: portrait,
   },
   {
     name: 'Dr. Gurmeet Chauhan',
     role: 'Head of Foundation · Trainer',
     body: 'A professional doctor and the trainer for our foundation, working tirelessly as Co-Head of the organization.',
+    tags: ['Su-Jok therapy', 'Trainer', 'Community camps'],
     image: gurmeet,
   },
 ];

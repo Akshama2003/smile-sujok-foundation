@@ -506,6 +506,11 @@ function Team() {
                 <h3 className="font-display text-xl font-semibold">{m.name}</h3>
                 <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-leaf">{m.role}</p>
                 <p className="mt-3 text-ink/70">{m.body}</p>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {m.tags.map((t) => (
+                    <li key={t} className="rounded-full bg-sage-100 px-3 py-1 text-xs font-medium text-forest">{t}</li>
+                  ))}
+                </ul>
               </div>
             </article>
           ))}
