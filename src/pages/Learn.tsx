@@ -5,6 +5,13 @@ import { FaqList } from './Home';
 
 const PROGRAMMES = ['Basic Correspondence System', 'Human Energy System (EFT)', 'Six Ki', 'Twist Therapy', 'Sam Won Dong', 'Triorigin Therapy', 'Smile Meditation', 'Smile Yoga'];
 
+const ADVANCED = [
+  { t: 'Smile Meditation', b: 'A simple, calming practice from Prof. Park Jae Woo’s teaching, for a quiet mind and a better quality of life.' },
+  { t: 'Sam Won Dong', b: 'Another practice from Prof. Park’s Triorigin teaching, which ISA also promotes alongside Smile Meditation. Ask us about upcoming sessions.' },
+  { t: 'Twist Therapy', b: 'An advanced approach taught in specialist courses, built on the basic Su-Jok system.' },
+  { t: 'Triorigin Chronopuncture', b: 'Studies how the timing of an event, such as an injury or the onset of symptoms, relates to the body’s energy, and when to treat.' },
+];
+
 const SYLLABUS = [
   { t: 'Foundations', items: ['Meridian system and Ki energy', 'Revision of the Basic correspondence system', 'Locating meridian points on hands and feet'] },
   { t: 'Practice', items: ['Treating with meridian points', 'Case discussion and practical sessions', 'Assessment and certification'] },
@@ -120,6 +127,14 @@ export default function Learn() {
                 </details>
               ))}
             </div>
+          </div>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {ADVANCED.map((a) => (
+              <article key={a.t} className="rounded-3xl border border-sage-200 bg-white p-6">
+                <h3 className="font-display text-lg font-semibold text-forest">{a.t}</h3>
+                <p className="mt-2 text-sm text-ink/75">{a.b}</p>
+              </article>
+            ))}
           </div>
           <div className="mt-6 rounded-3xl bg-sage-100 p-7">
             <p className="flex items-center gap-2 font-display text-lg font-semibold text-forest">

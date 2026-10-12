@@ -290,6 +290,26 @@ function Services() {
   );
 }
 
+function Founder() {
+  return (
+    <section className="bg-forest-dark py-14 text-white sm:py-20">
+      <Container className="grid items-center gap-8 lg:grid-cols-[1fr_1fr] lg:gap-16">
+        <div>
+          <Eyebrow light>The founder</Eyebrow>
+          <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Prof. Park Jae Woo, who gave the world Su-Jok.</h2>
+          <p className="mt-4 text-white/80">Born in Seoul in 1942 and a graduate of Seoul National University, Prof. Park developed Su-Jok therapy and the Triorigin philosophy. He later served as president of the Su-Jok Academy in Moscow, and passed away there on 25 March 2010.</p>
+          <p className="mt-3 text-white/80">Su-Jok practitioners around the world remember 25 March as Guru Dakshina Divas, a day of gratitude and service in his memory.</p>
+        </div>
+        <div className="rounded-3xl bg-white/10 p-7 ring-1 ring-white/15">
+          <PointMark className="text-gold-soft" />
+          <p className="mt-3 font-display text-2xl font-semibold leading-snug">“One Sujok therapist in each family.”</p>
+          <p className="mt-3 text-white/75">His vision is also ours. Every camp, class and clinic we run is a step towards it.</p>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 function Courses() {
   return (
     <section id="courses" className={`${section} bg-forest text-white`}>
@@ -635,6 +655,7 @@ export default function Home() {
       <Therapies />
       <Process />
       <Services />
+      <Founder />
       <Courses />
       <Events />
       <TreatmentAreas />
