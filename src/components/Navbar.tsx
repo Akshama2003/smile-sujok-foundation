@@ -29,8 +29,7 @@ export default function Navbar({ path = '/' }: { path?: string }) {
   return (
     <>
       <div className="bg-forest-dark text-white">
-        <Container className="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-2 text-xs sm:text-[13px]">
-          <p className="text-white/80">Affordable Su-Jok healthcare and training since 2015</p>
+        <Container className="flex flex-wrap items-center justify-end gap-x-6 gap-y-1 py-2 text-xs sm:text-[13px]">
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
             <a href={CONTACT.phones[0].href} className="flex items-center gap-1.5 hover:text-gold-soft">
               <Phone size={13} /> {CONTACT.phones[0].label}
