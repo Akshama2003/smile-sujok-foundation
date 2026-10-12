@@ -33,7 +33,7 @@ import HandMap from '../components/HandMap';
 import Hero, { Ribbon } from '../components/Hero';
 import { FootArt, HandArt, MagnetArt, MoxaArt } from '../components/Illustrations';
 import { Btn, Container, Eyebrow, PointMark, SafeImg, SectionHead } from '../components/ui';
-import { CONTACT, DRIVE_TAGS, EVENTS, FAQS, GALLERY, CERTIFICATION, LEVELS, SERVICES, TEAM, TESTIMONIALS, consultation, portrait, practitioners } from '../data';
+import { CONTACT, DRIVE_TAGS, EVENTS, FAQS, GALLERY, CERTIFICATION, LEVELS, PAIN_PHOTOS, handChart, SERVICES, TEAM, TESTIMONIALS, consultation, portrait, practitioners } from '../data';
 
 const section = 'scroll-mt-24 py-16 sm:py-24';
 
@@ -383,6 +383,20 @@ function Events() {
   );
 }
 
+function ChartSection() {
+  return (
+    <section id="chart" className={`${section} bg-paper`}>
+      <Container>
+        <SectionHead eyebrow="Reference chart" title="Hand reflexology chart: where each ailment is pressed." lead="The red zones on the left and right hand show the points practitioners use for common pain and ailments. Tap the chart to open it full size." />
+        <a href={handChart} target="_blank" rel="noreferrer" className="mt-10 block overflow-hidden rounded-3xl border border-sage-200 bg-white p-2 shadow-[0_24px_50px_-34px_rgba(56,86,36,.6)] sm:p-4">
+          <img src={handChart} alt="Hand reflexology chart showing left and right hand points for head, neck, chest, back, knees, stomach and feet" className="w-full rounded-2xl" />
+        </a>
+        <p className="mt-4 text-sm text-ink/60">For information only. Your practitioner will choose the points that suit you.</p>
+      </Container>
+    </section>
+  );
+}
+
 function TreatmentAreas() {
   const areas = [
     { icon: Brain, t: 'Head', b: 'Headaches, migraine, giddiness, sinus', pt: 'Thumb' },
@@ -405,6 +419,15 @@ function TreatmentAreas() {
               <h3 className="mt-4 font-display text-lg font-semibold">{a.t}</h3>
               <p className="mt-1 text-sm text-ink/70">{a.b}</p>
               <p className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-leaf"><PointMark className="text-gold" /> {a.pt}</p>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-14 font-display text-2xl font-semibold text-forest">Where people come to us for relief</p>
+        <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {PAIN_PHOTOS.map((p) => (
+            <li key={p.t} className="group relative overflow-hidden rounded-2xl">
+              <img src={p.src} alt={`${p.t} pain`} className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-dark/90 to-transparent px-4 pb-3 pt-10 font-display text-base font-semibold text-white">{p.t}</span>
             </li>
           ))}
         </ul>
@@ -658,6 +681,7 @@ export default function Home() {
       <Founder />
       <Courses />
       <Events />
+      <ChartSection />
       <TreatmentAreas />
       <Gallery />
       <Team />

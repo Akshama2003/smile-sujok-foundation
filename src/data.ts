@@ -15,6 +15,16 @@ import visit from './assets/img/visit.jpg';
 import conference from './assets/img/conference.jpg';
 import meeting from './assets/img/meeting.jpg';
 import gurmeet from './assets/img/gurmeet.jpg';
+import handChart from './assets/img/hand-chart.jpg';
+import pain1 from './assets/img/pain-1.jpg';
+import pain2 from './assets/img/pain-2.jpg';
+import pain3 from './assets/img/pain-3.jpg';
+import pain4 from './assets/img/pain-4.jpg';
+import pain5 from './assets/img/pain-5.jpg';
+import pain6 from './assets/img/pain-6.jpg';
+import pain7 from './assets/img/pain-7.jpg';
+import pain8 from './assets/img/pain-8.jpg';
+import pain9 from './assets/img/pain-9.jpg';
 
 export { logo, portrait, consultation, practitioners };
 
@@ -267,3 +277,17 @@ export const CERTIFICATION = {
   price: 'Fees on request',
   body: 'For students who have completed the three levels. Supervised practice, an assessment, and a certificate to practise as a Su-Jok therapist. Call us for the next batch and the fee.',
 };
+
+export { handChart };
+
+export const PAIN_PHOTOS = [
+  { src: pain1, t: 'Lower back' },
+  { src: pain2, t: 'Chest' },
+  { src: pain3, t: 'Side and abdomen' },
+  { src: pain4, t: 'Upper back' },
+  { src: pain5, t: 'Neck' },
+  { src: pain6, t: 'Elbow' },
+  { src: pain7, t: 'Stomach' },
+  { src: pain8, t: 'Shoulder' },
+  { src: pain9, t: 'Upper arm' },
+];
