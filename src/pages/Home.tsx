@@ -439,6 +439,30 @@ function Team() {
   );
 }
 
+function Videos() {
+  const topics = ['Hand and foot points', 'Pain relief at home', 'Seed and colour therapy', 'Stories from our camps'];
+  return (
+    <section className="bg-sage-50 py-12 sm:py-16">
+      <Container className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr]">
+        <div>
+          <Eyebrow>Watch and learn</Eyebrow>
+          <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">Learn Su-Jok on our YouTube channel.</h2>
+          <p className="mt-3 text-ink/75">Short videos from our camps, classes and demonstrations, so you can see the points being pressed.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Btn href="https://www.youtube.com/@smilesujokfoundationdehrad5435">Watch on YouTube</Btn>
+            <Btn href="#/learn" variant="outline">Join a course</Btn>
+          </div>
+        </div>
+        <ul className="grid grid-cols-2 gap-3">
+          {topics.map((t) => (
+            <li key={t} className="rounded-2xl bg-white p-4 text-sm font-medium text-forest ring-1 ring-sage-200">{t}</li>
+          ))}
+        </ul>
+      </Container>
+    </section>
+  );
+}
+
 function Stories() {
   return (
     <section id="stories" className={`${section} bg-sage-50`}>
@@ -582,6 +606,7 @@ export default function Home() {
       <Events />
       <Gallery />
       <Team />
+      <Videos />
       <Stories />
       <DonateBand />
       <Faq />

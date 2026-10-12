@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import FloatingChat from './components/FloatingChat';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -38,6 +39,7 @@ export default function App() {
         <Page />
       </main>
       <Footer />
+      <FloatingChat />
     </div>
   );
 }
