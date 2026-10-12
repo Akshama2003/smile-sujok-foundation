@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Mail, Menu, Phone, X } from 'lucide-react';
-import { CONTACT, logo } from '../data';
+import { Menu, X } from 'lucide-react';
+import { logo } from '../data';
 import { Container } from './ui';
 
 const links = [
@@ -28,19 +28,6 @@ export default function Navbar({ path = '/' }: { path?: string }) {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="bg-forest-dark text-white">
-        <Container className="flex flex-wrap items-center justify-end gap-x-6 gap-y-1 py-2 text-xs sm:text-[13px]">
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
-            <a href={CONTACT.phones[0].href} className="flex items-center gap-1.5 hover:text-gold-soft">
-              <Phone size={13} /> {CONTACT.phones[0].label}
-            </a>
-            <a href={`mailto:${CONTACT.email}`} className="hidden items-center gap-1.5 hover:text-gold-soft sm:flex">
-              <Mail size={13} /> {CONTACT.email}
-            </a>
-          </div>
-        </Container>
-      </div>
-
       <header className="sticky top-0 z-50 border-b border-sage-200 bg-white/95 backdrop-blur">
         <Container className="flex items-center justify-between gap-4 py-3">
           <Brand />
