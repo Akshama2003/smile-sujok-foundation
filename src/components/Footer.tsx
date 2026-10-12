@@ -6,11 +6,11 @@ const cols = [
   {
     title: 'Foundation',
     items: [
-      ['About us', '#/#about'],
-      ['How Su-Jok works', '#/#how'],
-      ['Services', '#/#services'],
-      ['Team', '#/#team'],
-      ['Gallery', '#/#gallery'],
+      ['About us', '#/about'],
+      ['Su-Jok therapy', '#/sujok'],
+      ['Services', '#/sujok'],
+      ['Team', '#/about'],
+      ['Gallery', '#/gallery'],
     ],
   },
   {
@@ -19,8 +19,8 @@ const cols = [
       ['Learn Sujok', '#/learn'],
       ['Courses and fees', '#/learn#levels'],
       ['Donate', '#/donate'],
-      ['FAQ', '#/#faq'],
-      ['Contact', '#/#contact'],
+      ['FAQ', '#/sujok'],
+      ['Contact', '#/contact'],
     ],
   },
 ];

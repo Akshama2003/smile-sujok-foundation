@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import FloatingChat from './components/FloatingChat';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Home from './pages/Home';
+import Home, { AboutPage, ContactPage, GalleryPage, SujokPage } from './pages/Home';
 import Learn from './pages/Learn';
 import Donate from './pages/Donate';
 
@@ -30,11 +30,12 @@ export default function App() {
     window.scrollTo(0, 0);
   }, [route]);
 
-  const Page = route.path === '/learn' ? Learn : route.path === '/donate' ? Donate : Home;
+  const pages: Record<string, () => JSX.Element> = { '/learn': Learn, '/donate': Donate, '/about': AboutPage, '/sujok': SujokPage, '/gallery': GalleryPage, '/contact': ContactPage };
+  const Page = pages[route.path] ?? Home;
 
   return (
     <div className="min-h-screen bg-paper">
-      <Navbar />
+      <Navbar path={route.path} />
       <main>
         <Page />
       </main>

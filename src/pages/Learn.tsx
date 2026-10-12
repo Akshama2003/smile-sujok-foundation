@@ -158,7 +158,7 @@ export default function Learn() {
             <SectionHead eyebrow="Questions" title="About learning Su-Jok." lead="Su-Jok was developed by Professor Park Jae Woo. It is best used as a complementary therapy under the guidance of a qualified practitioner." />
             <div className="mt-8 flex flex-wrap gap-3">
               <Btn href="#/donate">Become a member</Btn>
-              <Btn href="#/#contact" variant="outline" arrow={false}>
+              <Btn href="#/contact" variant="outline" arrow={false}>
                 Contact us
               </Btn>
             </div>

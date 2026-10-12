@@ -4,14 +4,12 @@ import { CONTACT, logo } from '../data';
 import { Container } from './ui';
 
 const links = [
-  { label: 'About', href: '#/#about' },
-  { label: 'How it works', href: '#/#how' },
-  { label: 'Therapies', href: '#/#therapies' },
-  { label: 'Services', href: '#/#services' },
-  { label: 'Learn Sujok', href: '#/learn' },
-  { label: 'Gallery', href: '#/#gallery' },
-  { label: 'Team', href: '#/#team' },
-  { label: 'Contact', href: '#/#contact' },
+  { label: 'Home', href: '#/', path: '/' },
+  { label: 'About', href: '#/about', path: '/about' },
+  { label: 'Su-Jok', href: '#/sujok', path: '/sujok' },
+  { label: 'Learn', href: '#/learn', path: '/learn' },
+  { label: 'Gallery', href: '#/gallery', path: '/gallery' },
+  { label: 'Contact', href: '#/contact', path: '/contact' },
 ];
 
 export function Brand({ light = false }: { light?: boolean }) {
@@ -26,7 +24,7 @@ export function Brand({ light = false }: { light?: boolean }) {
   );
 }
 
-export default function Navbar() {
+export default function Navbar({ path = '/' }: { path?: string }) {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -47,9 +45,9 @@ export default function Navbar() {
       <header className="sticky top-0 z-50 border-b border-sage-200 bg-white/95 backdrop-blur">
         <Container className="flex items-center justify-between gap-4 py-3">
           <Brand />
-          <nav className="hidden items-center gap-6 xl:flex" aria-label="Main">
+          <nav className="hidden items-center gap-1 xl:flex" aria-label="Main">
             {links.map((l) => (
-              <a key={l.label} href={l.href} className="text-sm font-medium text-ink/75 transition-colors hover:text-forest">
+              <a key={l.label} href={l.href} aria-current={path === l.path ? 'page' : undefined} className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${path === l.path ? 'bg-forest text-white' : 'text-ink/75 hover:bg-sage-100 hover:text-forest'}`}>
                 {l.label}
               </a>
             ))}
@@ -67,7 +65,7 @@ export default function Navbar() {
           <nav className="border-t border-sage-200 bg-white xl:hidden" aria-label="Mobile">
             <Container className="flex flex-col py-2">
               {links.map((l) => (
-                <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="border-b border-sage-100 py-3 text-base font-medium text-ink/85 last:border-0">
+                <a key={l.label} href={l.href} onClick={() => setOpen(false)} className={`border-b border-sage-100 py-3 text-base font-medium last:border-0 ${path === l.path ? 'text-forest' : 'text-ink/85'}`}>
                   {l.label}
                 </a>
               ))}

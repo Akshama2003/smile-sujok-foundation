@@ -33,7 +33,7 @@ export default function Donate() {
             />
             <div className="mt-8 flex flex-wrap gap-3">
               <Btn href="#/donate#pay">Donate now</Btn>
-              <Btn href="#/#contact" variant="outline" arrow={false}>
+              <Btn href="#/contact" variant="outline" arrow={false}>
                 Contact us
               </Btn>
             </div>

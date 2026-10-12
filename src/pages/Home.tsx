@@ -29,6 +29,7 @@ import {
   Brain,
   Wind,
 } from 'lucide-react';
+import Slider from '../components/Slider';
 import HandMap from '../components/HandMap';
 import Hero, { Ribbon } from '../components/Hero';
 import { FootArt, HandArt, MagnetArt, MoxaArt } from '../components/Illustrations';
@@ -255,7 +256,7 @@ function Services() {
                 </span>
                 <h3 className="mt-6 font-display text-xl font-semibold">{s.title}</h3>
                 <p className="mt-2 text-ink/70">{s.body}</p>
-                <a href="#/#contact" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-forest">
+                <a href="#/contact" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-forest">
                   Ask about this <ArrowRight size={15} className="transition-transform duration-200 group-hover:translate-x-1" />
                 </a>
               </article>
@@ -371,7 +372,7 @@ function Events() {
                 </span>
                 <h3 className="mt-6 font-display text-xl font-semibold">{e.title}</h3>
                 <p className="mt-2 text-ink/70">{e.body}</p>
-                <a href="#/#gallery" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-forest">
+                <a href="#/gallery" className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-forest">
                   See photos <ArrowRight size={15} />
                 </a>
               </article>
@@ -671,30 +672,83 @@ function Contact() {
   );
 }
 
+function PageTitle({ eyebrow, title, lead }: { eyebrow: string; title: string; lead?: string }) {
+  return (
+    <section className="relative overflow-hidden bg-forest-dark text-white">
+      <svg className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 text-white/[.07]" viewBox="0 0 200 200" aria-hidden>
+        {[90, 72, 54, 36, 18].map((r) => (
+          <circle key={r} cx="100" cy="100" r={r} fill="none" stroke="currentColor" strokeWidth="1" />
+        ))}
+      </svg>
+      <Container className="relative py-12 sm:py-16">
+        <Eyebrow light>{eyebrow}</Eyebrow>
+        <h1 className="mt-3 max-w-3xl text-4xl font-semibold sm:text-5xl">{title}</h1>
+        {lead && <p className="mt-4 max-w-2xl text-lg text-white/80">{lead}</p>}
+      </Container>
+    </section>
+  );
+}
+
+export function AboutPage() {
+  return (
+    <>
+      <PageTitle eyebrow="About us" title="Smile Su-Jok Foundation, Dehradun." lead="Natural healthcare and training for everyone, since 2015." />
+      <About />
+      <Trust />
+      <Founder />
+      <Team />
+      <Events />
+    </>
+  );
+}
+
+export function SujokPage() {
+  return (
+    <>
+      <PageTitle eyebrow="Su-Jok therapy" title="How Su-Jok works, and what it treats." lead="The hand and foot map, the techniques we use, and the conditions people visit us for." />
+      <How />
+      <ChartSection />
+      <Therapies />
+      <TreatmentAreas />
+      <Process />
+      <Services />
+      <Faq />
+    </>
+  );
+}
+
+export function GalleryPage() {
+  return (
+    <>
+      <PageTitle eyebrow="Gallery" title="Our camps, classes and community." />
+      <Gallery />
+      <Videos />
+      <Stories />
+    </>
+  );
+}
+
+export function ContactPage() {
+  return (
+    <>
+      <PageTitle eyebrow="Contact" title="Book a consultation or ask about a course." />
+      <Contact />
+    </>
+  );
+}
+
 export default function Home() {
   return (
     <>
       <Hero />
+      <Slider />
       <Ribbon />
       <Stats />
       <Trust />
-      <About />
-      <How />
-      <Therapies />
       <Process />
-      <Services />
-      <Founder />
       <Courses />
-      <Events />
-      <ChartSection />
-      <TreatmentAreas />
-      <Gallery />
-      <Team />
-      <Videos />
       <Stories />
       <DonateBand />
-      <Faq />
-      <Contact />
     </>
   );
 }
